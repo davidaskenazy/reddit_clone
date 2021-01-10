@@ -12,7 +12,7 @@ public enum VoteType {
 
     VoteType(int direction) {
     }
-
+/*
     public static VoteType lookup(Integer direction) {
         return Arrays.stream(VoteType.values())
                 .filter(value -> value.getDirection().equals(direction))
@@ -22,5 +22,5 @@ public enum VoteType {
 
     public Integer getDirection() {
         return direction;
-    }
+    }*/
 }
