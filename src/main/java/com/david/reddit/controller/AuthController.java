@@ -3,6 +3,7 @@ package com.david.reddit.controller;
 import com.david.reddit.dto.RegisterRequest;
 import com.david.reddit.service.AuthService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,5 +24,11 @@ public class AuthController {
         authService.signup(registerRequest);
         return new ResponseEntity<>("User Registration Successful",
                 OK);
+    }
+
+    @GetMapping("accountVerification/{token}")
+    public ResponseEntity<String> verifyAccount(@PathVariable String token){
+        authService.verifyAccount(token);
+        return  new ResponseEntity<>("Account Activated Succesfully", HttpStatus.OK);
     }
 }

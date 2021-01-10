@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.time.Instant;
 
 import static javax.persistence.FetchType.LAZY;
@@ -24,7 +25,7 @@ public class Post {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long postId;
-    @NotNull
+    @NotBlank(message = "Post Name cannot be empty or Null")
     private String postName;
     @Nullable
     private String url;
